@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-civic-blue-50: #eff6ff;
+  --color-civic-blue-100: #dbeafe;
+  --color-civic-blue-500: #3b82f6;
+  --color-civic-blue-600: #2563eb;
+  --color-civic-blue-700: #1d4ed8;
+  --color-civic-blue-900: #1e3a8a;
+  
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.step-active {
+  background-color: var(--color-civic-blue-600);
+  color: white;
+  border-color: var(--color-civic-blue-600);
+}
+
+.step-completed {
+  background-color: var(--color-civic-blue-100);
+  color: var(--color-civic-blue-700);
+  border-color: var(--color-civic-blue-500);
+}
+
+.step-inactive {
+  background-color: white;
+  color: var(--color-text-secondary);
+  border-color: #cbd5e1;
+}
+
+@media print {
+  /* Hide all UI clutter */
+  header, footer, .hide-on-print, section[aria-labelledby="welcome-heading"], section[aria-label="Election Journey"], button[aria-label="Open Election Assistant"] {
+    display: none !important;
+  }
+  
+  /* Reset body background for printing */
+  body {
+    background-color: white !important;
+  }
+
+  /* Make map and details full width and avoid breaking page */
+  .print-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  .print-header {
+    border: 2px solid #000 !important;
+    background: #fff !important;
+    color: #000 !important;
+    page-break-inside: avoid;
+  }
+  
+  .print-header h3, .print-header p {
+    color: #000 !important;
+  }
+
+  .print-map {
+    border: 2px solid #000 !important;
+    height: 600px !important;
+    page-break-inside: avoid;
+  }
+}
