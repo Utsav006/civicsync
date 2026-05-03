@@ -14,6 +14,12 @@ This project addresses the **Election/Civic Assistant** vertical. Our primary mi
 3. **📅 The Election Journey:** A visual, interactive timeline that gamifies and simplifies the voting process. Users can check off their progress through critical deadlines, with state persistently saved via `localStorage`.
 4. **🖨️ Offline Voting Pass:** Recognizing strict polling booth device regulations, we implemented an optimized `@media print` stylesheet. With one click, users can physically print a clean, high-contrast sheet containing their exact polling location details—automatically stripping away all web UI clutter to save ink and maintain readability.
 
+##Technical Highlights:
+
+1. **LLM Integration: Optimized with Gemini 2.5 Flash using custom System Instructions for civic expertise.
+2. **Accessibility: Built with ARIA-compliant components and multi-language (Hindi/English) support.
+3. **Performance: Implemented React memoization (useMemo/useCallback) to reduce re-renders during AI processing.
+
 ## Any Assumptions Made
 * **Geographic Focus:** We assumed the default user context is New Delhi/Prayagraj, India. However, the geocoding logic is built to dynamically adapt to any user's inputted street location seamlessly.
 * **Digital Literacy & Accessibility:** We assumed our user base spans a wide spectrum of digital literacy, motor function, and typing abilities. This assumption directly drove the inclusion of the prominent Voice-to-Text search and the instant Hindi translation toggle to ensure no voter is left behind.
